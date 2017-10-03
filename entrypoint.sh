@@ -84,6 +84,9 @@ if [[ "$1" != "/"* ]]; then
     # Collect static files
     manage collectstatic --no-input
 
+		# Load some initial tests data
+		mange loaddata initial_data
+
     exec sudo -HEu netbox ./manage.py "$@"
 fi
 
